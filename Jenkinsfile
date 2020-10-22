@@ -137,14 +137,7 @@ pipeline {
             }
           }
 
-          post {
-            success {
-              mail  to: 'oxygen0579@gmail.com',
-                    subject: "Deploy Success",
-                    body: "Successfully deployed!"
-                  
-            }
-          }
+
         }
     }
 }
