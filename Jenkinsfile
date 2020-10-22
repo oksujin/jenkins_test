@@ -116,11 +116,7 @@ pipeline {
             }
           }
 
-          post {
-            failure {
-              error 'This pipeline stops here...'
-            }
-          }
+
         }
         
         stage('Deploy Backend') {
