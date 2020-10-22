@@ -22,7 +22,7 @@ pipeline {
                 echo "Lets start Long Journey! ENV: ${ENV}"
                 echo 'Clonning Repository'
 
-                git url: 'https://github.com/frontalnh/temp.git',
+                git url: 'https://github.com/oksujin/jenkins_test.git',
                     branch: 'master',
                     credentialsId: 'jenkinsgit'
             }
@@ -54,7 +54,7 @@ pipeline {
               success {
                   echo 'Successfully Cloned Repository'
 
-                  mail  to: 'frontalnh@gmail.com',
+                  mail  to: 'oxygen0579@gmail.com',
                         subject: "Deploy Frontend Success",
                         body: "Successfully deployed frontend!"
                   
@@ -62,7 +62,7 @@ pipeline {
               failure {
                   echo 'I failed :('
 
-                  mail  to: 'frontalnh@gmail.com',
+                  mail  to: 'oxygen0579@gmail.com',
                         subject: "Failed Pipelinee",
                         body: "Something is wrong with deploy frontend"
               }
@@ -132,7 +132,7 @@ pipeline {
 
             dir ('./server'){
                 sh '''
-                docker rm -f $(docker ps -aq)
+                // docker rm -f $(docker ps -aq)
                 docker run -p 80:80 -d server
                 '''
             }
@@ -140,7 +140,7 @@ pipeline {
 
           post {
             success {
-              mail  to: 'frontalnh@gmail.com',
+              mail  to: 'oxygen0579@gmail.com',
                     subject: "Deploy Success",
                     body: "Successfully deployed!"
                   
